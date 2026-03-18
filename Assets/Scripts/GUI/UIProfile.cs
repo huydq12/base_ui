@@ -132,7 +132,7 @@ public class UIProfile : UIPopup
     public void SetSelectedFrame(int index)
     {
         currentFrameIndex = index;
-        selectFrame.position = listFrame[index].transform.position + Vector3.up * 0.02f;
+        selectFrame.position = listFrame[index].transform.position + Vector3.up * 0.007f;
         UpdateFrameSelection();
 
         Debug.Log("Set selected frame: " + index);
