@@ -121,7 +121,7 @@ public class UIProfile : UIPopup
     public void SetSelectedAvatar(int index)
     {
         currentAvatarIndex = index;
-        selectAvatar.position = listAvatar[index].transform.position + Vector3.up * 0.02f;
+        selectAvatar.position = listAvatar[index].transform.position + Vector3.up * 0.007f;
         UpdateAvatarSelection();
 
         Debug.Log("Set selected avatar: " + index);
