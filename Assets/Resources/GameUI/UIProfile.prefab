@@ -1889,7 +1889,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f8ac3baa6e1e30340887ebcf28891574, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a63b1444bb351bd4bb7577c1d13efd26, type: 2}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3114,8 +3114,8 @@ MonoBehaviour:
   text_unlock_info: {fileID: 8568221485820236610}
   btn_unlock: {fileID: 6138672661974852393}
   img_unlock: {fileID: 3514781463959414491}
-  btn_unlock_on: {fileID: 21300000, guid: e38fde3372d457e47835f48645593239, type: 3}
-  btn_unlock_off: {fileID: 21300000, guid: 31871e5289e15b946a9119050b18632a, type: 3}
+  btn_unlock_on: {fileID: 21300000, guid: 773432f68cc03d84b8f09e1aea9fe552, type: 3}
+  btn_unlock_off: {fileID: 21300000, guid: 1e66b22d86e648644942035db1731bad, type: 3}
 --- !u!1 &5783177531794359954
 GameObject:
   m_ObjectHideFlags: 0
