@@ -1,7 +1,8 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
+using static UnityEngine.GraphicsBuffer;
 
 public enum TabProfile
 {
@@ -120,6 +121,10 @@ public class UIProfile : UIPopup
 
     public void SetSelectedAvatar(int index)
     {
+        //Tạm thêm dòng này để dấu tick có thể hiển thị trên ô selêct màu xanh
+        selectAvatar.SetParent(listAvatar[index].transform);
+        selectAvatar.SetSiblingIndex(3);
+
         currentAvatarIndex = index;
         selectAvatar.position = listAvatar[index].transform.position + Vector3.up * 0.007f;
         UpdateAvatarSelection();
