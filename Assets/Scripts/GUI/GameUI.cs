@@ -9,6 +9,7 @@ using UnityEngine.EventSystems;
 
 public class GameUI : Singleton<GameUI>
 {
+    [SerializeField] private Sprite behindSprite;
     private List<UIElement> ActiveElements;
     private Dictionary<Type, UIElement> Elements;
     private RectTransform FrontPanel, BehindPanel;
@@ -98,8 +99,19 @@ public class GameUI : Singleton<GameUI>
     }
     private void CreateFrontAndBehindPanel()
     {
-        FrontPanel = CreatePanel("FrontPanel", new Color(1, 1, 1, 0));
-        BehindPanel = CreatePanel("BehindPanel", new Color(0, 0, 0, 0.9725f));
+        //FrontPanel = CreatePanel("FrontPanel", new Color(1, 1, 1, 0));
+        //BehindPanel = CreatePanel("BehindPanel", new Color(0, 0, 0, 0.9725f));
+        FrontPanel = CreatePanel("FrontPanel", Color.clear);
+
+        BehindPanel = CreatePanel("BehindPanel", Color.white);
+
+        Image img = BehindPanel.GetComponent<Image>();
+        if (behindSprite != null)
+        {
+            img.sprite = behindSprite;
+            img.type = Image.Type.Simple; 
+        }
+
         Button button = BehindPanel.gameObject.AddComponent<Button>();
         button.transition = Selectable.Transition.None;
         button.onClick.AddListener(HideOnTop);
@@ -113,7 +125,9 @@ public class GameUI : Singleton<GameUI>
     private RectTransform CreatePanel(string name, Color color)
     {
         GameObject panelObject = new GameObject(name);
-        panelObject.AddComponent<Image>().color = color;
+        //panelObject.AddComponent<Image>().color = color;
+        Image img = panelObject.AddComponent<Image>();
+        img.color = Color.white; 
         RectTransform panelRect = panelObject.GetComponent<RectTransform>();
         SetParent(panelRect, transform);
         panelRect.anchorMax = Vector2.one;
